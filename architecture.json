@@ -1,0 +1,37 @@
+{
+    "language": "Rust",
+    "dependency_file": "Cargo.toml",
+    "dependencies": ["clap", "serde"],
+    "files": [
+        {
+            "path": "src/main.rs",
+            "description": "Entry point and CLI argument parsing",
+            "exports": ["fn main()", "struct Args", "enum Command"]
+        },
+        {
+            "path": "src/analyzer.rs",
+            "description": "Core logic for analyzing cooking methods and food risks",
+            "exports": ["fn analyze_cooking_scenario()", "struct RiskAssessment"]
+        },
+        {
+            "path": "src/recommendations.rs",
+            "description": "Provides safe cooking alternatives and recommendations",
+            "exports": ["fn get_safety_recommendations()", "struct Recommendation"]
+        },
+        {
+            "path": "src/foods.rs",
+            "description": "Data structures and logic related to food items and their risk profiles",
+            "exports": ["struct FoodItem", "fn check_pah_risk()"]
+        },
+        {
+            "path": "src/report.rs",
+            "description": "Formatting and generation of analysis reports",
+            "exports": ["fn generate_report()", "struct AnalysisReport"]
+        },
+        {
+            "path": "src/lib.rs",
+            "description": "Library exports and module organization",
+            "exports": ["mod analyzer", "mod recommendations", "mod foods", "mod report"]
+        }
+    ]
+}
